@@ -1,0 +1,15 @@
+{
+  "name": "hycyon-catalogue",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Hycyon Catalogue — https://catalogue.hycyon.com",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node scripts/check.mjs",
+    "serve": "node scripts/serve.mjs",
+    "assets": "node scripts/make-assets.mjs",
+    "test": "npm run build && npm run check"
+  }
+}
