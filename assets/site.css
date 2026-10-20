@@ -328,7 +328,8 @@ table.compare{width:100%;min-width:40rem;border-collapse:separate;border-spacing
 .labels{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 var(--space-4);padding:0;list-style:none}
 .label{padding:.28rem .65rem;border:1px solid var(--line-strong);border-radius:var(--radius-pill);font:600 .66rem/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
 .label.live{color:var(--signal);border-color:var(--signal);background:var(--signal-soft)}
-.label.engineering{border-style:dashed}
+.label.engineering,.label.coming{border-style:dashed}
+.label.client{color:var(--ink);border-color:var(--ink-2)}
 .project h3{font:500 var(--step-3)/1.05 var(--font-display);letter-spacing:-.02em;margin-bottom:var(--space-3)}
 .project-sum{color:var(--ink);margin-bottom:var(--space-2)}
 .project-prob{color:var(--ink-3);font-size:.93rem}
