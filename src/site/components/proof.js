@@ -44,7 +44,7 @@ export const hycyonConnection = () => html`
     <ul class="facts-list reveal">
       <li><strong>Own products, live.</strong> eBook Pro and BrainSpark are built, run and supported in-house.</li>
       <li><strong>Production stack.</strong> Flutter, Firebase, Node.js and Swift across web, mobile and backend.</li>
-      <li><strong>Keys stay server-side.</strong> AI calls run behind Cloud Functions with credentials in Secret Manager — never in the app.</li>
+      <li><strong>Keys stay server-side.</strong> AI calls run behind Cloud Functions with credentials in Secret Manager.</li>
       <li><strong>Open about it.</strong> <a href="${links.ebookProSite}">eBook Pro</a>, <a href="${links.brainSpark}">BrainSpark</a> and the <a href="${links.portfolio}">portfolio</a> are public.</li>
     </ul>
   </div>
