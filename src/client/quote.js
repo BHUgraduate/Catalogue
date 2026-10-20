@@ -4,12 +4,16 @@ import { services } from '../shared/data/services.js';
 import { tiers } from '../shared/data/tiers.js';
 import { site } from '../shared/data/site.js';
 import { addonStore } from './plan.js';
+import { sendLead } from './relay.js';
 
 const bySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
 const STEP_TITLES = ['About you', 'What are you building?', 'Budget & timeline', 'References & add-ons', 'Review & send'];
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-/** Guided quote request. There is no backend: the result is a pre-written email draft (mailto). */
+/**
+ * Guided quote request. It is sent to Hycyon's form relay. If that is unreachable for any reason, the visitor gets the
+ * pre-written email draft (mailto) instead, so a request is never lost.
+ */
 export function initQuote() {
   const form = $('[data-quote-form]');
   if (!form) return null;
@@ -79,7 +83,10 @@ export function initQuote() {
   form.addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && cur < steps.length - 1) { e.preventDefault(); next.click(); } });
   form.addEventListener('input', (e) => { if (e.target.id) setError(e.target.id, ''); });
 
-  form.addEventListener('submit', (e) => {
+  const doneTitle = $('[data-done-title]', done), doneText = $('[data-done-text]', done), doneMail = $('[data-mailto]', done);
+  const DEFAULT_TITLE = doneTitle.textContent, DEFAULT_TEXT = doneText.textContent;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     for (let i = 0; i < steps.length; i++) if (!validate(i)) { show(i, false); validate(i); return; }
     const rows = Object.fromEntries(summary());
@@ -109,9 +116,37 @@ Best regards,
 ${rows.Name}`;
     lastText = `To: ${site.email}\nSubject: ${subject}\n\n${body}`;
     const href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    $('[data-mailto]', done).href = href;
-    form.hidden = true; done.hidden = false; done.focus();
-    location.href = href;
+    doneMail.href = href;
+
+    const label = submit.textContent;
+    submit.disabled = true; submit.textContent = 'Sending…';
+    const clean = (v, none) => (v && v !== none ? v : '');
+    const result = await sendLead({
+      source: 'catalogue',
+      name: rows.Name, email: rows.Email,
+      phone: clean(rows['Mobile / WhatsApp'], 'Not provided'), company: clean(rows.Organisation, 'Independent'),
+      service: rows.Service, platform: clean(rows.Platform, 'Not specified'),
+      budget: rows.Budget, timeline: rows.Timeline,
+      addons: clean(rows['Add-ons'], 'None'), reference: clean(rows.Reference, 'None'),
+      description: rows.Description, acknowledged: true,
+      website: $('[data-hp]', form).value,
+    });
+    submit.disabled = false; submit.textContent = label;
+
+    form.hidden = true; done.hidden = false;
+    if (result.ok) {
+      doneTitle.textContent = 'Request sent';
+      doneText.textContent = `Thank you, ${rows.Name.split(' ')[0]}. We have your request and will reply to ${rows.Email}. A copy is below if you'd like to keep it.`;
+      doneMail.hidden = true;
+      done.focus();
+    } else {
+      // The relay was unreachable or refused it: give them the email draft so the request is not lost.
+      doneTitle.textContent = DEFAULT_TITLE;
+      doneText.textContent = `We couldn't send it online just now. ${DEFAULT_TEXT}`;
+      doneMail.hidden = false;
+      done.focus();
+      location.href = href;
+    }
   });
 
   $('[data-copy]', done).addEventListener('click', async (e) => {
@@ -119,7 +154,7 @@ ${rows.Name}`;
     try { await navigator.clipboard.writeText(lastText); btn.textContent = 'Copied'; } catch { btn.textContent = 'Copy failed — select the text manually'; }
     setTimeout(() => { btn.textContent = 'Copy request text'; }, 2500);
   });
-  $('[data-edit]', done).addEventListener('click', () => { done.hidden = true; form.hidden = false; show(0); });
+  $('[data-edit]', done).addEventListener('click', () => { done.hidden = true; form.hidden = false; doneMail.hidden = false; doneTitle.textContent = DEFAULT_TITLE; doneText.textContent = DEFAULT_TEXT; show(0); });
 
   // Add-ons mirror the add-on modules.
   const boxes = $$('input[name="addon"]', form);

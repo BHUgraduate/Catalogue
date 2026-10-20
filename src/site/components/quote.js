@@ -45,7 +45,7 @@ export const quoteSection = () => html`
         <li><strong>We reply.</strong> A direct answer from ${site.email} with a scope breakdown and price estimate.</li>
         <li><strong>You decide.</strong> A firm quotation follows scope review. Nothing is binding before that.</li>
       </ul>
-      <p class="muted small">Submitting opens your email app with the request pre-written. Nothing is sent until you press send there. Prefer to write it yourself? <a href="mailto:${site.email}">${site.email}</a></p>
+      <p class="muted small">Submitting sends your request to Hycyon over HTTPS, and we use it only to reply. If it can't be sent, your email app opens with the request written out instead. Prefer to write it yourself? <a href="mailto:${site.email}">${site.email}</a></p>
     </div>
     <div class="quote-card reveal">
       <form id="quote-form" class="qform" novalidate data-quote-form>
@@ -95,6 +95,8 @@ export const quoteSection = () => html`
           </div>
         </fieldset>
 
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" data-hp></label></div>
+
         <div class="qnav">
           <button type="button" class="btn btn-ghost btn-sm" data-back hidden>Back</button>
           <button type="button" class="btn btn-primary" data-next>Continue</button>
@@ -103,8 +105,8 @@ export const quoteSection = () => html`
         <noscript><p class="muted">This form needs JavaScript. Please email <a href="mailto:${site.email}">${site.email}</a> instead.</p></noscript>
       </form>
       <div class="done" data-done hidden tabindex="-1" role="status">
-        <h3>Your request is ready to send</h3>
-        <p>Your email app should open with the request written out. Nothing is sent until you press send. If it didn't open, use the buttons below.</p>
+        <h3 data-done-title>Your request is ready to send</h3>
+        <p data-done-text>Your email app should open with the request written out. Nothing is sent until you press send. If it didn't open, use the buttons below.</p>
         <div class="cta-row"><a class="btn btn-primary" data-mailto href="mailto:${site.email}">Open email draft</a><button type="button" class="btn btn-ghost" data-copy>Copy request text</button><button type="button" class="link-arrow" data-edit>Edit request</button></div>
       </div>
     </div>
