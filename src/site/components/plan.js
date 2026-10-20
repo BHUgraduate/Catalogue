@@ -1,6 +1,7 @@
 import { html } from '../../shared/html.js';
 import { services } from '../../shared/data/services.js';
 import { tiers } from '../../shared/data/tiers.js';
+import { maturity, maturityGroups } from '../../shared/data/maturity.js';
 import { comparison } from '../../shared/data/comparison.js';
 import { addons } from '../../shared/data/addons.js';
 import { transparency, pricingFactors } from '../../shared/data/transparency.js';
@@ -10,12 +11,24 @@ import { head } from './ui.js';
 const bySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
 const inTier = (t) => services.filter((s) => overlaps(s, t));
 
+const stageOf = (t) => maturity.find((m) => m.id === t.stage);
+
+const maturityMap = () => html`
+<div class="maturity reveal">
+  <p class="maturity-intro">Before price, there is complexity. Every project sits at one of five stages, defined by what the software has to do — not by how many pages it has.</p>
+  ${maturityGroups.map((g) => html`<div class="maturity-group ${g.id}">
+    <p class="k">${g.label}</p>
+    <p class="muted small">${g.note}</p>
+    <ol>${maturity.filter((m) => m.group === g.id).map((m) => html`<li><strong>${m.name}</strong><span>${m.line}</span><span class="muted small">${m.adds}</span></li>`)}</ol>
+  </div>`)}
+</div>`;
+
 const tierPanel = (t, i) => {
   const matches = inTier(t);
   return html`
 <div class="tier-panel" role="tabpanel" id="tier-panel-${t.key}" aria-labelledby="tier-tab-${t.key}" data-tier-panel="${t.key}">
   <div class="tier-main">
-    <p class="k">Scope level ${i + 1} of ${tiers.length}</p>
+    <p class="k">${stageOf(t).name} stage · ${maturityGroups.find((g) => g.id === stageOf(t).group).label} · Level ${i + 1} of ${tiers.length}</p>
     <h3 class="tier-title">${t.title}</h3>
     <p class="price price-xl">${t.range}</p>
     <p class="lede">${t.summary}</p>
@@ -39,9 +52,10 @@ export const packages = () => html`
 <section class="section alt" id="packages" aria-labelledby="packages-title">
   <div class="wrap">
     ${head({ eyebrow: 'Packages by budget', title: 'What can I build with my budget?', id: 'packages-title', intro: "Pricing here is a ladder of engineering scope. Pick a level to see what's realistic, what isn't, and how it's likely to be built." })}
+    ${maturityMap()}
     <div class="tiers" data-tiers>
       <div class="tier-tabs" role="tablist" aria-label="Scope levels by budget">
-        ${tiers.map((t, i) => html`<button class="tier" type="button" role="tab" id="tier-tab-${t.key}" aria-controls="tier-panel-${t.key}" aria-selected="${i === 0 ? 'true' : 'false'}" data-tier="${t.key}" style="--lvl:${i + 1}"><span class="tier-bar" aria-hidden="true"></span><span class="tier-name">${t.name}</span><span class="tier-range">${t.range}</span></button>`)}
+        ${tiers.map((t, i) => html`<button class="tier" type="button" role="tab" id="tier-tab-${t.key}" aria-controls="tier-panel-${t.key}" aria-selected="${i === 0 ? 'true' : 'false'}" data-tier="${t.key}" style="--lvl:${i + 1}"><span class="tier-bar" aria-hidden="true"></span><span class="tier-stage">${stageOf(t).name}</span><span class="tier-name">${t.name}</span><span class="tier-range">${t.range}</span></button>`)}
       </div>
       <div class="tier-panels">${tiers.map(tierPanel)}</div>
     </div>

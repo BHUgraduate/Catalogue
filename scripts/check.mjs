@@ -6,6 +6,7 @@ import { services } from '../src/shared/data/services.js';
 import { categories } from '../src/shared/data/categories.js';
 import { goals } from '../src/shared/data/goals.js';
 import { tiers } from '../src/shared/data/tiers.js';
+import { maturity, maturityGroups } from '../src/shared/data/maturity.js';
 import { comparison } from '../src/shared/data/comparison.js';
 import { projects } from '../src/shared/data/projects.js';
 
@@ -26,6 +27,8 @@ for (const s of services) {
 for (const g of goals) for (const id of g.serviceIds) if (!slugs.has(id)) fail(`goal ${g.key}: unknown service ${id}`);
 for (const c of comparison.columns) if (!slugs.has(c.slug)) fail(`comparison: unknown service ${c.slug}`);
 for (const r of comparison.rows) if (r.values.length !== comparison.columns.length) fail(`comparison row "${r.label}" has wrong column count`);
+for (const t of tiers) if (!maturity.some((m) => m.id === t.stage)) fail(`tier ${t.key}: unknown maturity stage "${t.stage}"`);
+for (const m of maturity) if (!maturityGroups.some((g) => g.id === m.group)) fail(`maturity ${m.id}: unknown group`);
 for (const t of tiers) if (!services.some((s) => s.minPrice <= t.max && s.maxPrice >= t.min)) fail(`tier ${t.key} matches no services`);
 for (const p of projects) for (const l of p.links) if (!l.href.startsWith('https://')) fail(`project ${p.slug}: link must be https`);
 

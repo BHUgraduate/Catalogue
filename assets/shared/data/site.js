@@ -14,6 +14,7 @@ export const links = {
   ebookProSite: 'https://ebookpro.hycyon.com/',
   ebookProApp: 'https://ebookpro.web.app/',
   brainSpark: 'https://brainsparkos.web.app/',
+  ironsIrony: 'https://ironsirony.hycyon.com/',
 };
 
 export const nav = [
