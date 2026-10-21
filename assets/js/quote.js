@@ -142,7 +142,7 @@ ${rows.Name}`;
     } else {
       // The relay was unreachable or refused it: give them the email draft so the request is not lost.
       doneTitle.textContent = DEFAULT_TITLE;
-      doneText.textContent = `We couldn't send it online just now. ${DEFAULT_TEXT}`;
+      doneText.textContent = `We couldn't send it online just now (reason: ${result.reason}). ${DEFAULT_TEXT}`;
       doneMail.hidden = false;
       done.focus();
       location.href = href;
