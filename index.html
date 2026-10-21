@@ -1105,7 +1105,7 @@
         <li><strong>We reply.</strong> A direct answer from hycyon.hq@gmail.com with a scope breakdown and price estimate.</li>
         <li><strong>You decide.</strong> A firm quotation follows scope review. Nothing is binding before that.</li>
       </ul>
-      <p class="muted small">Submitting opens your email app with the request pre-written. Nothing is sent until you press send there. Prefer to write it yourself? <a href="mailto:hycyon.hq@gmail.com">hycyon.hq@gmail.com</a></p>
+      <p class="muted small">Submitting sends your request to Hycyon over HTTPS, and we use it only to reply. If it can't be sent, your email app opens with the request written out instead. Prefer to write it yourself? <a href="mailto:hycyon.hq@gmail.com">hycyon.hq@gmail.com</a></p>
     </div>
     <div class="quote-card reveal">
       <form id="quote-form" class="qform" novalidate data-quote-form>
@@ -1215,6 +1215,8 @@
           </div>
         </fieldset>
 
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" data-hp></label></div>
+
         <div class="qnav">
           <button type="button" class="btn btn-ghost btn-sm" data-back hidden>Back</button>
           <button type="button" class="btn btn-primary" data-next>Continue</button>
@@ -1223,8 +1225,8 @@
         <noscript><p class="muted">This form needs JavaScript. Please email <a href="mailto:hycyon.hq@gmail.com">hycyon.hq@gmail.com</a> instead.</p></noscript>
       </form>
       <div class="done" data-done hidden tabindex="-1" role="status">
-        <h3>Your request is ready to send</h3>
-        <p>Your email app should open with the request written out. Nothing is sent until you press send. If it didn't open, use the buttons below.</p>
+        <h3 data-done-title>Your request is ready to send</h3>
+        <p data-done-text>Your email app should open with the request written out. Nothing is sent until you press send. If it didn't open, use the buttons below.</p>
         <div class="cta-row"><a class="btn btn-primary" data-mailto href="mailto:hycyon.hq@gmail.com">Open email draft</a><button type="button" class="btn btn-ghost" data-copy>Copy request text</button><button type="button" class="link-arrow" data-edit>Edit request</button></div>
       </div>
     </div>
@@ -1266,7 +1268,7 @@
 </footer>
 <div class="sticky-cta" data-sticky-cta hidden><a class="btn btn-primary" href="#quote">Start a Project</a></div>
 <dialog class="sheet" id="detail-dialog" aria-labelledby="detail-title"><div class="sheet-inner"><button class="sheet-close icon-btn" type="button" aria-label="Close" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div id="detail-body"></div></div></dialog>
-<link rel="modulepreload" href="./assets/js/main.js"><link rel="modulepreload" href="./assets/js/dom.js"><link rel="modulepreload" href="./assets/js/chrome.js"><link rel="modulepreload" href="./assets/js/stack.js"><link rel="modulepreload" href="./assets/shared/html.js"><link rel="modulepreload" href="./assets/shared/data/services.js"><link rel="modulepreload" href="./assets/shared/data/scope-stack.js"><link rel="modulepreload" href="./assets/shared/render/icons.js"><link rel="modulepreload" href="./assets/js/goals.js"><link rel="modulepreload" href="./assets/shared/data/goals.js"><link rel="modulepreload" href="./assets/shared/render/goalResult.js"><link rel="modulepreload" href="./assets/shared/data/categories.js"><link rel="modulepreload" href="./assets/js/explorer.js"><link rel="modulepreload" href="./assets/shared/data/tiers.js"><link rel="modulepreload" href="./assets/shared/format.js"><link rel="modulepreload" href="./assets/js/detail.js"><link rel="modulepreload" href="./assets/shared/render/serviceDetail.js"><link rel="modulepreload" href="./assets/js/plan.js"><link rel="modulepreload" href="./assets/js/quote.js"><link rel="modulepreload" href="./assets/shared/data/site.js">
+<link rel="modulepreload" href="./assets/js/main.js"><link rel="modulepreload" href="./assets/js/dom.js"><link rel="modulepreload" href="./assets/js/chrome.js"><link rel="modulepreload" href="./assets/js/stack.js"><link rel="modulepreload" href="./assets/shared/html.js"><link rel="modulepreload" href="./assets/shared/data/services.js"><link rel="modulepreload" href="./assets/shared/data/scope-stack.js"><link rel="modulepreload" href="./assets/shared/render/icons.js"><link rel="modulepreload" href="./assets/js/goals.js"><link rel="modulepreload" href="./assets/shared/data/goals.js"><link rel="modulepreload" href="./assets/shared/render/goalResult.js"><link rel="modulepreload" href="./assets/shared/data/categories.js"><link rel="modulepreload" href="./assets/js/explorer.js"><link rel="modulepreload" href="./assets/shared/data/tiers.js"><link rel="modulepreload" href="./assets/shared/format.js"><link rel="modulepreload" href="./assets/js/detail.js"><link rel="modulepreload" href="./assets/shared/render/serviceDetail.js"><link rel="modulepreload" href="./assets/js/plan.js"><link rel="modulepreload" href="./assets/js/quote.js"><link rel="modulepreload" href="./assets/shared/data/site.js"><link rel="modulepreload" href="./assets/js/relay.js">
 <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
