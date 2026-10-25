@@ -8,7 +8,7 @@ export const site = {
   location: 'Varanasi, Uttar Pradesh, India',
   // Hycyon's form relay (hycyon/relay on Netlify). If it is unreachable the quote form falls back to an email draft.
   formsEndpoint: 'https://hycyon-forms.netlify.app/api/lead',
-  updated: '2026-10-19',
+  updated: '2026-10-25',
 };
 
 export const links = {
