@@ -493,3 +493,11 @@ html.menu-open .site-header{backdrop-filter:none;background:var(--paper)}
 
 /* Spam honeypot: invisible to people and assistive tech; bots fill it in. */
 .hp{position:absolute;left:-9999px;height:0;width:0;overflow:hidden}
+
+/* Long-form text pages (privacy) */
+.prose{max-width:68ch}
+.prose h2{font-size:var(--step-2);margin:var(--space-6) 0 var(--space-2)}
+.prose p{margin:0 0 var(--space-3)}
+.cat-intro{margin-bottom:var(--space-6)}
+.cat-choose{margin-top:var(--space-8)}
+.cat-choose h2{font-size:var(--step-2);margin-bottom:var(--space-3)}

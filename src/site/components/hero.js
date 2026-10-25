@@ -32,8 +32,8 @@ export const hero = () => html`
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
       <p class="hero-kicker">Hycyon Catalogue · Let's build yours.</p>
-      <h1 id="hero-title">Software built around what you <em>actually</em> need.</h1>
-      <p class="hero-lede">Websites, applications, mobile apps, AI systems and custom software — designed, engineered and shipped around your actual requirements.</p>
+      <h1 id="hero-title">Websites, apps and AI built around what you <em>actually</em> need.</h1>
+      <p class="hero-lede">Websites, web apps, mobile apps, AI systems, browser extensions and custom software for businesses in India — designed, engineered and shipped to a clear scope, with indicative INR prices up front.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#services">Explore Services</a>
         <a class="btn btn-ghost" href="#quote" data-cta>Start a Project</a>

@@ -4,7 +4,16 @@ import { categoryById } from '../shared/data/categories.js';
 import { faqGroups } from '../shared/data/faq.js';
 
 const orgId = 'https://hycyon.com/#organization';
-const org = { '@type': 'Organization', '@id': orgId, name: 'Hycyon', url: links.hycyon, email: site.email };
+const org = {
+  '@type': 'Organization',
+  '@id': orgId,
+  name: 'Hycyon',
+  url: links.hycyon,
+  email: site.email,
+  logo: `${site.url}/assets/img/icon-512.png`,
+  address: { '@type': 'PostalAddress', addressLocality: 'Varanasi', addressRegion: 'Uttar Pradesh', addressCountry: 'IN' },
+  sameAs: ['https://www.facebook.com/hycyon', 'https://www.instagram.com/hycyonhq/', 'https://www.youtube.com/@hycyonhq', 'https://x.com/hycyon'],
+};
 const websiteId = `${site.url}/#website`;
 const website = { '@type': 'WebSite', '@id': websiteId, url: `${site.url}/`, name: 'Hycyon Catalogue', description: site.description, publisher: { '@id': orgId }, inLanguage: 'en' };
 
@@ -16,6 +25,7 @@ const serviceLd = (s) => ({
   serviceType: categoryById[s.category].label,
   url: `${site.url}/services/${s.slug}/`,
   provider: { '@id': orgId },
+  areaServed: { '@type': 'Country', name: 'India' },
   offers: { '@type': 'AggregateOffer', priceCurrency: 'INR', lowPrice: s.minPrice, highPrice: s.maxPrice, description: 'Indicative range; final price confirmed after scope review.' },
 });
 
