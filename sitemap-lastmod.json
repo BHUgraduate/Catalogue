@@ -1,0 +1,170 @@
+{
+  "https://catalogue.hycyon.com/": {
+    "hash": "fa058a85cd90c18d",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/privacy/": {
+    "hash": "1f0caa5fd313e721",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/": {
+    "hash": "d88c5990492deb39",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/advanced-web-app/": {
+    "hash": "44457a6df921fbb7",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/ai-app/": {
+    "hash": "78f37619b0336e9f",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/ai-chatbot/": {
+    "hash": "c487e1fc6d8ae703",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/ai-feature/": {
+    "hash": "28df4e284815727c",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/ai-rag/": {
+    "hash": "2c55887f5e08aed4",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/ai/": {
+    "hash": "16af09826fc9b987",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/backend-api/": {
+    "hash": "2665d6a94ac3a20f",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/backend-auth/": {
+    "hash": "cad50fdfaf623555",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/backend-dashboard/": {
+    "hash": "b3f62f7d552c45aa",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/backend-db/": {
+    "hash": "c1615ef56360b257",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/backend/": {
+    "hash": "583a21b942f2fecf",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/basic-website/": {
+    "hash": "f3008ab3533fae76",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/business-website/": {
+    "hash": "bca6d20487a93102",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/custom-enterprise/": {
+    "hash": "1a455f638ace345b",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/custom-prototype/": {
+    "hash": "1f377adb1c5ffe99",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/custom-utility/": {
+    "hash": "6f638575c5a36d80",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/custom/": {
+    "hash": "90e132c7931d6923",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/design-refresh/": {
+    "hash": "855d44d889248c28",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/design/": {
+    "hash": "27087600841d8856",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/extension-ai/": {
+    "hash": "396b407adc349c93",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/extension-api/": {
+    "hash": "f4167a936d062184",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/extension-automation/": {
+    "hash": "1b038f307f5f2ff2",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/extension-basic/": {
+    "hash": "bc895d805b3ba9e3",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/extensions/": {
+    "hash": "597c51bbdf2ef9a5",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/maintenance-monthly/": {
+    "hash": "f38d5de00bd2160e",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/mini-web-app/": {
+    "hash": "9503138cf5b797f2",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/mobile-backend/": {
+    "hash": "59a83001d5f31821",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/mobile-basic/": {
+    "hash": "d03221419e070f13",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/mobile-mvp/": {
+    "hash": "4e26ee8b387a5b27",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/mobile-product/": {
+    "hash": "4445a4b14fd8ef27",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/mobile/": {
+    "hash": "7bbaa4dbdb80ae74",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/perf-optimization/": {
+    "hash": "e76e8895ebbf4762",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/premium-website/": {
+    "hash": "642f1027ce91897e",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/saas-platform/": {
+    "hash": "0253ff83afb97c64",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/standard-web-app/": {
+    "hash": "a21dd3cad527447f",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/starter-website/": {
+    "hash": "194e5175f8600363",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/web-apps/": {
+    "hash": "a40b13811debac4b",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/services/websites/": {
+    "hash": "46c110b10eefb6b7",
+    "date": "2026-10-25"
+  },
+  "https://catalogue.hycyon.com/terms/": {
+    "hash": "2850978e415d35ae",
+    "date": "2026-10-25"
+  }
+}

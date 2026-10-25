@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://catalogue.hycyon.com/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/privacy/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/terms/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/websites/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/web-apps/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/mobile/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/advanced-web-app/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/ai-app/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/ai-chatbot/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/ai-feature/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/ai-rag/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/ai/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/extensions/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/backend-api/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/backend-auth/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/backend-dashboard/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/backend-db/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/backend/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/custom/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/design/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/starter-website/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/basic-website/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/business-website/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/premium-website/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/mini-web-app/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/standard-web-app/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/advanced-web-app/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/saas-platform/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/mobile-mvp/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/mobile-basic/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/mobile-backend/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/mobile-product/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/extension-basic/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/extension-api/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/extension-ai/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/extension-automation/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/ai-feature/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/ai-chatbot/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/ai-rag/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/ai-app/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/backend-auth/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/backend-db/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/backend-api/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/backend-dashboard/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/custom-utility/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://catalogue.hycyon.com/services/custom-prototype/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/custom-enterprise/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/custom-prototype/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/custom-utility/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/custom/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/design-refresh/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/design/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/extension-ai/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/extension-api/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/extension-automation/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/extension-basic/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/extensions/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/maintenance-monthly/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/mini-web-app/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/mobile-backend/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/mobile-basic/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/mobile-mvp/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/mobile-product/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/mobile/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://catalogue.hycyon.com/services/perf-optimization/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/premium-website/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/saas-platform/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/standard-web-app/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/starter-website/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/web-apps/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/services/websites/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://catalogue.hycyon.com/terms/</loc><lastmod>2026-10-25</lastmod></url>
 </urlset>
