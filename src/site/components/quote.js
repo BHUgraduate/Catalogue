@@ -90,7 +90,7 @@ export const quoteSection = () => html`
           <legend class="sr-only">Review and send</legend>
           <dl class="summary" data-summary></dl>
           <div class="field ack">
-            <label class="check"><input id="quote-ack" name="ack" type="checkbox" required><span>I understand that displayed prices are indicative ranges and that the final binding quotation depends on confirmed scope, integrations and deliverables. <span class="req" aria-hidden="true">*</span></span></label>
+            <label class="check"><input id="quote-ack" name="ack" type="checkbox" required><span>I understand that displayed prices are indicative ranges and that the final binding quotation depends on confirmed scope, integrations and deliverables, under the <a href="terms/">terms of service</a>. <span class="req" aria-hidden="true">*</span></span></label>
             <p class="err" id="quote-ack-err" hidden></p>
           </div>
         </fieldset>
