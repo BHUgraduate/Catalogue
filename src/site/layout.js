@@ -72,7 +72,9 @@ const footer = (u) => html`
       </ul></div>
       <div><h2>Contact</h2><ul>
         <li><a href="mailto:${site.email}">${site.email}</a></li>
+        <li>${site.location}</li>
         <li><a href="${u('./')}#faq">FAQ</a></li>
+        <li><a href="${u('privacy/')}">Privacy</a></li>
       </ul></div>
     </div>
     <div class="legal">

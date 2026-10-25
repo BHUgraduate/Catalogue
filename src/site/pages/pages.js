@@ -41,7 +41,7 @@ export const categoryPage = (c) => {
   const list = services.filter((s) => s.category === c.id);
   return page({
     title: `${c.label} — Services & Pricing | Hycyon Catalogue`,
-    description: `${list.length} ${c.label.toLowerCase()} services from Hycyon with deliverables, exclusions, delivery windows and indicative INR pricing.`,
+    description: `${list.length === 1 ? 'One service' : `${list.length} services`} in ${c.label} from Hycyon, with deliverables, exclusions, delivery times and indicative INR pricing.`,
     path: `/services/${c.id}/`,
     depth: 2,
     jsonLd: listPageLd(c.label, `/services/${c.id}/`),
@@ -61,6 +61,28 @@ export const servicesIndex = () =>
     body: html`<div class="wrap page-pad">${crumbs([['Catalogue', '../'], ['Services']])}
       <h1 class="page-title">All services</h1>
       ${categories.map((c) => html`<section class="cat-block"><h2><a href="${c.id}/">${c.label}</a></h2><ul class="related">${services.filter((s) => s.category === c.id).map((s) => html`<li><a href="${s.slug}/"><span>${s.name}</span><span class="muted">${s.priceDisplay}</span></a></li>`)}</ul></section>`)}</div>`,
+  });
+
+export const privacy = () =>
+  page({
+    title: 'Privacy — Hycyon Catalogue',
+    description: 'What the Hycyon Catalogue collects when you request a quote, where it goes, and what it is used for.',
+    path: '/privacy/',
+    depth: 1,
+    body: html`<div class="wrap page-pad">${crumbs([['Catalogue', '../'], ['Privacy']])}
+      <article class="prose">
+      <h1 class="page-title">Privacy</h1>
+      <p>Last updated ${site.updated}.</p>
+      <h2>This website</h2>
+      <p>The catalogue does not use analytics, advertising trackers or cookies. Fonts are served from this site, not a third party. Your browser may store one preference in local storage — whether you chose the light or dark theme. It never leaves your device.</p>
+      <h2>The quote form</h2>
+      <p>When you send a project request we receive what you type: your name, email address, any optional phone, business and reference details, the service and budget you chose, and your description of the project. It is sent over HTTPS to a small form service hosted on Netlify, which passes it to a private Hycyon channel on Discord.</p>
+      <p>We use it only to reply to you with a scope and quotation. We do not sell or share it. If sending fails, your email app opens with the request written out instead, and it is then handled as ordinary email.</p>
+      <h2>Quotes are not contracts</h2>
+      <p>Prices on this site are indicative ranges. Nothing is binding until a firm quotation follows scope review.</p>
+      <h2>Questions or deletion requests</h2>
+      <p>Write to <a href="mailto:${site.email}">${site.email}</a> and we will delete your request on request.</p>
+      </article></div>`,
   });
 
 export const notFound = () =>

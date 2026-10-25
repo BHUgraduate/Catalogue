@@ -6,6 +6,10 @@
 @font-face{font-family:"Inter";src:url(fonts/Inter.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:"Fraunces";src:url(fonts/Fraunces.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
 
+/* Metric-matched fallbacks so the swap to Inter/Fraunces barely moves text (measured against Arial / Times New Roman). */
+@font-face{font-family:"Inter Fallback";src:local("Arial");size-adjust:105.9%;ascent-override:91.5%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:"Fraunces Fallback";src:local("Times New Roman"),local("Times");size-adjust:124.4%;ascent-override:78.6%;descent-override:20.5%;line-gap-override:0%}
+
 :root{
   color-scheme:light;
 
@@ -30,8 +34,8 @@
   --grid-dot:rgb(16 20 26/.10);
 
   /* Type */
-  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
-  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-display:"Fraunces","Fraunces Fallback",Georgia,"Times New Roman",serif;
+  --font-body:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --step--1:clamp(.8125rem,.79rem + .1vw,.875rem);
   --step-0:clamp(1rem,.97rem + .15vw,1.0625rem);
