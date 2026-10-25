@@ -7,7 +7,8 @@ export const searchText = (s) =>
   [s.name, s.shortDesc, s.bestFor, categoryById[s.category].label, ...s.includes].join(' ').toLowerCase();
 
 /** `root` is the relative path back to the site root ('' on the home page). */
-export const serviceCard = (s, root = '', { level = 3 } = {}) => {
+/** `compact` (home explorer) drops the deliverables list: the full list lives on the service's own page. */
+export const serviceCard = (s, root = '', { level = 3, compact = false } = {}) => {
   const name = html`<a href="${root}services/${s.slug}/" data-detail="${s.slug}">${s.name}</a>`;
   const title = level === 2 ? html`<h2 class="svc-name">${name}</h2>` : html`<h3 class="svc-name">${name}</h3>`;
   return html`
@@ -20,10 +21,10 @@ export const serviceCard = (s, root = '', { level = 3 } = {}) => {
   <p class="price" aria-label="Indicative price">${s.priceDisplay}</p>
   <p class="svc-desc">${s.shortDesc}</p>
   <p class="svc-best"><span class="k">Best for</span>${s.bestFor}</p>
-  <div class="svc-block">
+  ${compact ? '' : html`<div class="svc-block">
     <span class="k">You get</span>
     <ul class="ticks">${s.includes.slice(0, 3).map((i) => html`<li>${i}</li>`)}</ul>
-  </div>
+  </div>`}
   <p class="svc-excl"><span class="k">Not included</span>${s.notIncluded[0]}</p>
   <div class="svc-actions">
     <a class="btn btn-ghost btn-sm" href="${root}services/${s.slug}/" data-detail="${s.slug}">View details</a>

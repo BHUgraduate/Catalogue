@@ -70,7 +70,7 @@ export const explorer = () => html`
         </div>
         <div class="f-actions"><button type="button" class="link-arrow" data-reset>Reset filters</button><button type="button" class="btn btn-primary btn-sm" data-close-filters data-apply>Show services</button></div>
       </div>
-      <div class="svc-grid" id="svc-grid">${services.map((s) => serviceCard(s))}</div>
+      <div class="svc-grid" id="svc-grid">${services.map((s) => serviceCard(s, '', { compact: true }))}</div>
       <div class="empty" data-empty hidden>
         <h3>No services match this combination.</h3>
         <p>Try a wider budget or a different search.</p>

@@ -46,7 +46,11 @@ export const categoryPage = (c) => {
     depth: 2,
     jsonLd: listPageLd(c.label, `/services/${c.id}/`),
     body: html`<div class="wrap page-pad">${crumbs([['Catalogue', '../../'], ['Services', '../'], [c.label]])}
-      <h1 class="page-title">${c.label}</h1><p class="lede">${c.strip}.</p>${grid(list)}
+      <h1 class="page-title">${c.label}</h1><p class="lede">${c.strip}.</p>
+      <div class="prose cat-intro">${c.intro.map((t) => html`<p>${t}</p>`)}</div>
+      ${grid(list)}
+      <section class="cat-choose" aria-labelledby="choose-title"><h2 id="choose-title">Which ${c.label.toLowerCase()} service fits?</h2>
+        <ul class="related">${list.map((s) => html`<li><a href="../${s.slug}/"><span><strong>${s.name}</strong> — ${s.bestFor}</span><span class="muted">${s.priceDisplay}</span></a></li>`)}</ul></section>
       <p class="page-foot"><a class="link-arrow" href="../../#services">Explore all services</a></p></div>`,
   });
 };
