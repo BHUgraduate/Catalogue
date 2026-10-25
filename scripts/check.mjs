@@ -33,7 +33,7 @@ for (const t of tiers) if (!services.some((s) => s.minPrice <= t.max && s.maxPri
 for (const p of projects) for (const l of p.links) if (!l.href.startsWith('https://')) fail(`project ${p.slug}: link must be https`);
 
 // 2. Pages
-const pages = ['index.html', '404.html', 'privacy/index.html', 'services/index.html', ...categories.map((c) => `services/${c.id}/index.html`), ...services.map((s) => `services/${s.slug}/index.html`)];
+const pages = ['index.html', '404.html', 'privacy/index.html', 'terms/index.html', 'services/index.html', ...categories.map((c) => `services/${c.id}/index.html`), ...services.map((s) => `services/${s.slug}/index.html`)];
 const ids = (h) => new Set([...h.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
 for (const f of pages) {
   if (!existsSync(join(root, f))) { fail(`missing page ${f}`); continue; }

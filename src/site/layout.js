@@ -75,6 +75,7 @@ const footer = (u) => html`
         <li>${site.location}</li>
         <li><a href="${u('./')}#faq">FAQ</a></li>
         <li><a href="${u('privacy/')}">Privacy</a></li>
+        <li><a href="${u('terms/')}">Terms</a></li>
       </ul></div>
     </div>
     <div class="legal">
