@@ -6,6 +6,7 @@ import { site } from './src/shared/data/site.js';
 import { services } from './src/shared/data/services.js';
 import { categories } from './src/shared/data/categories.js';
 import * as pages from './src/site/pages/pages.js';
+import { lastmods } from './scripts/lastmod.mjs';
 
 const ROOT = new URL('./', import.meta.url);
 const SRC = new URL('./src/', import.meta.url);
@@ -21,13 +22,19 @@ const copy = (from, to) => cpSync(new URL(from, SRC), new URL(to, ROOT), { recur
 for (const o of OUTPUTS) rmSync(new URL(o, ROOT), { recursive: true, force: true });
 
 // Pages
-write('index.html', toString(pages.home()));
-write('privacy/index.html', toString(pages.privacy()));
-write('terms/index.html', toString(pages.terms()));
+// Indexable pages are recorded by canonical URL so the sitemap can date each one separately.
+const rendered = {};
+const writePage = (urlPath, file, html) => {
+  rendered[`${site.url}${urlPath}`] = html;
+  write(file, html);
+};
+writePage('/', 'index.html', toString(pages.home()));
+writePage('/privacy/', 'privacy/index.html', toString(pages.privacy()));
+writePage('/terms/', 'terms/index.html', toString(pages.terms()));
 write('404.html', toString(pages.notFound()));
-write('services/index.html', toString(pages.servicesIndex()));
-for (const c of categories) write(`services/${c.id}/index.html`, toString(pages.categoryPage(c)));
-for (const s of services) write(`services/${s.slug}/index.html`, toString(pages.servicePage(s)));
+writePage('/services/', 'services/index.html', toString(pages.servicesIndex()));
+for (const c of categories) writePage(`/services/${c.id}/`, `services/${c.id}/index.html`, toString(pages.categoryPage(c)));
+for (const s of services) writePage(`/services/${s.slug}/`, `services/${s.slug}/index.html`, toString(pages.servicePage(s)));
 
 // CSS bundle: tokens → base → components, comments stripped.
 const css = ['tokens', 'base', 'components']
@@ -48,8 +55,8 @@ rmSync(new URL('assets/img/og-preview.png', ROOT));
 
 // Crawlers, manifest, hosting
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`);
-const urls = ['/', '/services/', '/privacy/', '/terms/', ...categories.map((c) => `/services/${c.id}/`), ...services.map((s) => `/services/${s.slug}/`)];
-write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((p) => `  <url><loc>${site.url}${p}</loc><lastmod>${site.updated}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+const dates = lastmods(rendered, new URL('sitemap-lastmod.json', ROOT), site.updated);
+write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${Object.entries(dates).map(([loc, d]) => `  <url><loc>${loc}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 write('manifest.webmanifest', JSON.stringify({ name: 'Hycyon Catalogue', short_name: 'Catalogue', description: site.description, start_url: './', display: 'browser', background_color: '#f5f3ee', theme_color: '#f5f3ee', icons: [{ src: 'assets/img/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'assets/img/icon-512.png', sizes: '512x512', type: 'image/png' }] }));
 write('.nojekyll', '');
 if (!existsSync(new URL('CNAME', ROOT))) write('CNAME', 'catalogue.hycyon.com\n');
